@@ -9,6 +9,7 @@ import rais.rams.rais.rams.raisdbservices.CORSSupport
 import spray.can.Http
 import spray.routing._
 
+/*
 object raisLauncher extends  App{
 
   implicit val system = ActorSystem("rais-app-system")
@@ -20,6 +21,7 @@ object raisLauncher extends  App{
   readLine(s"Hit ENTER to exit ...${System.getProperty("line.separator")}")
   system.shutdown()
 }
+*/
 
 class RaisServiceActor extends Actor with ActorLogging with raisLoginService{
   def actorRefFactory = context

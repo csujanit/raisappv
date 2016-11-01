@@ -12,7 +12,7 @@ import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 
-
+/*
 object raisdataModel extends  App{
  override  def main(args:Array[String]):Unit ={
    val db = Database.forConfig("mysqlDB")
@@ -27,3 +27,4 @@ object raisdataModel extends  App{
         codgenFuture.map(_.writeToFile("slick.driver.MySQLDriver",path,"dal","Tables","Tables.scala")),20 seconds)
  }
 }
+*/
