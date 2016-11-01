@@ -4,11 +4,11 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
-
-
 val sprayVersion = "1.3.3"
 
 val json4snVersion = "3.4.1"
+
+enablePlugins(JavaAppPackaging)
 
 libraryDependencies += "io.spray" % "spray-can_2.11" % sprayVersion
 
@@ -20,21 +20,6 @@ libraryDependencies ++=
 
 libraryDependencies += "io.spray" % "spray-routing_2.11" % sprayVersion
 
-
-
-val stage = taskKey[Unit]("Stage task")
-
-val Stage = config("stage")
-
-stage := {
-  (packageWar in Compile).value
-  (update in Stage).value.allFiles.foreach { f =>
-    if (f.getName.matches("webapp-runner-0+.jar")) {
-      println("copying " + f.getName)
-      IO.copyFile(f, baseDirectory.value / "target" / "webapp-runner.jar")
-    }
-  }
-}
 libraryDependencies += "io.spray" % "spray-testkit_2.11" % sprayVersion % "test"
 
 val akkaVersion = "2.4.10"
@@ -68,5 +53,3 @@ libraryDependencies += "com.typesafe.akka" % "akka-http-core_2.11" % "2.4.11"
 libraryDependencies += "com.typesafe.akka" % "akka-stream_2.11" % "2.4.11"
 
 libraryDependencies += "com.typesafe.akka" % "akka-http-spray-json-experimental_2.11" % "2.4.11"
-
-
