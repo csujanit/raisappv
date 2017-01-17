@@ -1,0 +1,6 @@
+{
+  "name": "Appartment example",
+  "description": "Testing",
+  "website": "https://indeez.in",
+  "success_url": "/ip/8.8.8.8"
+}
